@@ -1,0 +1,288 @@
+/* Estilos Generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #f8b400;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    flex: 1;
+    text-align: left;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+h1 {
+    flex: 2;
+    text-align: center;
+    margin: 0;
+    color: #333;
+}
+
+h2 {
+    color: #333;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+article {
+    margin: 20px 0;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #f8b400;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d99500;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.detalle {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Estilos de las Categorías */
+.contenedor-categorias {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.categoria {
+    width: 48%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.categoria h2 {
+    text-align: center;
+}
+
+.categoria img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.comentarios {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.comentarios h3 {
+    margin-bottom: 10px;
+}
+
+.comentarios form label {
+    display: block;
+    margin: 5px 0;
+}
+
+.comentarios form input,
+.comentarios form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.comentarios form button {
+    background-color: #f8b400;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comentarios form button:hover {
+    background-color: #d99500;
+}
+
+#lista-comentarios-postres,
+#lista-comentarios-pasteles {
+    margin-top: 15px;
+}
+
+.comentario {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+/* Vista de Detalles en Pantalla Completa */
+#vista-detalle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Para que sea desplazable si el contenido es extenso */
+}
+
+#vista-detalle img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#cerrar-detalle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    z-index: 1001;
+}
+
+#mensaje-compra {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Media Queries para Responsividad */
+
+/* Tablets (768px o menos) */
+@media (max-width: 768px) {
+    .contenedor-categorias {
+        flex-direction: column;
+    }
+    
+    .categoria {
+        width: 100%;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    .comprar-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    #vista-detalle img,
+    #mensaje-compra img {
+        max-width: 80%;
+    }
+}
+
+/* Móviles (480px o menos) */
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.2em;
+    }
+
+    .comprar-btn {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    #cerrar-detalle {
+        font-size: 20px;
+        top: 10px;
+        right: 10px;
+    }
+
+    #vista-detalle img,
+    #mensaje-compra img {
+        max-width: 70%;
+    }
+}
+
+
+

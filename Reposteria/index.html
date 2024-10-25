@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repostería Los Sueños</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagen/logo_1.png" alt="Logo" class="logo">
+        </div>
+        <h1>Repostería Los Sueños</h1>
+        <nav>
+            <ul>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contenedor-categorias">
+        <section id="postres" class="categoria">
+            <h2>Postres</h2>
+            <div class="comentarios">
+                <h3>¿Te gustaría sugerir un nuevo postre?</h3>
+                <form id="form-comentarios-postres" onsubmit="submitComentario(event, 'postres')">
+                    <label for="nombrePostre">Nombre del postre:</label>
+                    <input type="text" id="nombrePostre" required>
+                    
+                    <label for="comentarioPostre">Comentario o sugerencia:</label>
+                    <textarea id="comentarioPostre" rows="4" required></textarea>
+                    
+                    <button type="submit">Enviar Sugerencia</button>
+                </form>
+                <div id="lista-comentarios-postres">
+                    <!-- Aquí se mostrarán los comentarios de los usuarios -->
+                </div>
+            </div>
+
+            <!-- Brownies -->
+            <article class="tutorial">
+                <h3>Brownies</h3>
+                <img src="imagen/postre1.png" alt="Brownies">
+                <p>Brownies esponjosos con un sabor intenso a chocolate. ¡Irresistibles!</p>
+                <button onclick="mostrarTutorial('brownies')">Ver Tutorial</button>
+                <div id="brownies" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de chocolate oscuro</li>
+                        <li>200g de mantequilla</li>
+                        <li>200g de azúcar</li>
+                        <li>3 huevos</li>
+                        <li>100g de harina</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C.</li>
+                        <li>Derrite el chocolate junto con la mantequilla en baño María o en microondas, mezclando cada 30 segundos.</li>
+                        <li>En un bol aparte, bate los huevos con el azúcar hasta obtener una mezcla cremosa.</li>
+                        <li>Añade el chocolate derretido y mezcla bien.</li>
+                        <li>Agrega la harina tamizada y mezcla con una espátula hasta que se integren todos los ingredientes.</li>
+                        <li>Vierte la mezcla en un molde previamente engrasado.</li>
+                        <li>Hornea durante 25-30 minutos o hasta que al insertar un palillo salga limpio.</li>
+                        <li>Deja enfriar antes de cortar en cuadrados.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="brownies">Quiero comprarlo</button>
+            </article>
+
+            <!-- Flan de Caramelo -->
+            <article class="tutorial">
+                <h3>Flan de Caramelo</h3>
+                <img src="imagen/postre2.jpg" alt="Flan de Caramelo">
+                <p>Un flan suave con un delicioso caramelo que se derrite en la boca.</p>
+                <button onclick="mostrarTutorial('flan')">Ver Tutorial</button>
+                <div id="flan" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>500ml de leche</li>
+                        <li>4 huevos</li>
+                        <li>200g de azúcar</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C.</li>
+                        <li>En una cacerola, calienta 100g de azúcar a fuego medio hasta que se derrita y forme un caramelo dorado.</li>
+                        <li>Vierte el caramelo en un molde para flan, cubriendo la base de manera uniforme.</li>
+                        <li>En un bol, bate los huevos y añade el resto del azúcar. Mezcla bien.</li>
+                        <li>Agrega la leche y sigue mezclando hasta que quede homogéneo.</li>
+                        <li>Vierte la mezcla sobre el caramelo en el molde.</li>
+                        <li>Cocina el flan al baño María durante aproximadamente 45-50 minutos.</li>
+                        <li>Deja enfriar a temperatura ambiente y luego refrigera por al menos 4 horas antes de desmoldar.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="flan">Quiero comprarlo</button>
+            </article>
+
+            <!-- Arroz con Leche -->
+            <article class="tutorial">
+                <h3>Arroz con Leche</h3>
+                <img src="imagen/postre3.jpg" alt="Arroz con Leche">
+                <p>Un clásico postre de arroz con leche cremoso y dulce.</p>
+                <button onclick="mostrarTutorial('arroz_con_leche')">Ver Tutorial</button>
+                <div id="arroz_con_leche" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>1 litro de leche</li>
+                        <li>200g de arroz</li>
+                        <li>100g de azúcar</li>
+                        <li>Canela en rama</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Enjuaga el arroz con agua fría para eliminar el almidón.</li>
+                        <li>Coloca la leche en una cacerola junto con la rama de canela y calienta a fuego medio.</li>
+                        <li>Cuando la leche comience a hervir, añade el arroz y reduce el fuego a bajo.</li>
+                        <li>Cocina el arroz a fuego lento, removiendo constantemente, durante unos 30-40 minutos hasta que el arroz esté tierno.</li>
+                        <li>Agrega el azúcar y mezcla bien. Cocina por 10 minutos más.</li>
+                        <li>Retira del fuego y deja enfriar. Puedes servir frío o caliente, espolvoreado con canela en polvo.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="arroz_con_leche">Quiero comprarlo</button>
+            </article>
+            
+            <!-- Gelatina de Frutas -->
+            <article class="tutorial">
+                <h3>Gelatina de Frutas</h3>
+                <img src="imagen/postre4.jpg" alt="Gelatina de Frutas">
+                <p>Una gelatina fresca y colorida hecha con frutas naturales.</p>
+                <button onclick="mostrarTutorial('gelatina_frutas')">Ver Tutorial</button>
+                <div id="gelatina_frutas" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>500ml de gelatina (cualquier sabor)</li>
+                        <li>Frutas variadas al gusto (fresas, manzanas, uvas, etc.)</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Prepara la gelatina siguiendo las instrucciones del paquete.</li>
+                        <li>Deja enfriar un poco la gelatina, pero sin que cuaje completamente.</li>
+                        <li>Corta las frutas en trozos pequeños y agrégalas a la gelatina.</li>
+                        <li>Vierte la mezcla en moldes individuales o en un recipiente grande.</li>
+                        <li>Refrigera durante al menos 4 horas o hasta que la gelatina esté completamente cuajada.</li>
+                        <li>Sirve frío y disfruta de la mezcla de sabores y texturas.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="gelatina_frutas">Quiero comprarlo</button>
+            </article>
+
+            <!-- Panqueques -->
+            <article class="tutorial">
+                <h3>Panqueques</h3>
+                <img src="imagen/postre5.jpg" alt="Panqueques">
+                <p>Panqueques suaves y esponjosos, perfectos para un desayuno o postre.</p>
+                <button onclick="mostrarTutorial('panqueques')">Ver Tutorial</button>
+                <div id="panqueques" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de harina</li>
+                        <li>2 huevos</li>
+                        <li>300ml de leche</li>
+                        <li>50g de mantequilla derretida</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>En un bol, mezcla la harina con los huevos y bate bien.</li>
+                        <li>Añade la leche poco a poco, batiendo constantemente para evitar grumos.</li>
+                        <li>Incorpora la mantequilla derretida y mezcla hasta obtener una masa homogénea.</li>
+                        <li>Calienta una sartén antiadherente a fuego medio y engrásala ligeramente con mantequilla o aceite.</li>
+                        <li>Vierte una pequeña cantidad de la masa en la sartén, formando círculos.</li>
+                        <li>Cocina los panqueques durante unos 2 minutos por cada lado o hasta que estén dorados.</li>
+                        <li>Sirve con miel, frutas o sirope al gusto.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="panqueques">Quiero comprarlo</button>
+            </article>
+            
+            <!-- Churros -->
+            <article class="tutorial">
+                <h3>Churros</h3>
+                <img src="imagen/postre6.jpg" alt="Churros">
+                <p>Churros crujientes por fuera y suaves por dentro, espolvoreados con azúcar y canela.</p>
+                <button onclick="mostrarTutorial('churros')">Ver Tutorial</button>
+                <div id="churros" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>250g de harina</li>
+                        <li>250ml de agua</li>
+                        <li>1 pizca de sal</li>
+                        <li>Azúcar y canela para espolvorear</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>En una cacerola, hierve el agua con una pizca de sal.</li>
+                        <li>Cuando el agua esté hirviendo, añade la harina de golpe y mezcla vigorosamente hasta que se forme una masa homogénea.</li>
+                        <li>Deja enfriar la masa un poco y colócala en una manga pastelera con una boquilla en forma de estrella.</li>
+                        <li>Calienta aceite en una sartén profunda.</li>
+                        <li>Forma los churros con la manga pastelera directamente en el aceite caliente.</li>
+                        <li>Fríe los churros hasta que estén dorados y crujientes, aproximadamente 2-3 minutos por cada lado.</li>
+                        <li>Escúrrelos en papel absorbente y espolvorea con azúcar y canela.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="churros">Quiero comprarlo</button>
+            </article>
+            
+            <!-- Turrón -->
+            <article class="tutorial">
+                <h3>Turrón</h3>
+                <img src="imagen/postre7.jpeg" alt="Turrón">
+                <p>Turrón dulce y crujiente, perfecto para celebraciones y ocasiones especiales.</p>
+                <button onclick="mostrarTutorial('turron')">Ver Tutorial</button>
+                <div id="turron" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de azúcar</li>
+                        <li>200g de almendras</li>
+                        <li>1 clara de huevo</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Tuesta ligeramente las almendras en una sartén sin aceite.</li>
+                        <li>En una cacerola, derrite el azúcar a fuego medio hasta formar un caramelo dorado.</li>
+                        <li>Añade las almendras al caramelo y mezcla bien para cubrirlas por completo.</li>
+                        <li>Retira del fuego y añade la clara de huevo batida, mezclando rápidamente.</li>
+                        <li>Vierte la mezcla en un molde forrado con papel de hornear.</li>
+                        <li>Deja enfriar hasta que el turrón esté duro.</li>
+                        <li>Corta en porciones y sirve.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="turron">Quiero comprarlo</button>
+            </article>
+            
+            <!-- Bizcocho de Yogur -->
+            <article class="tutorial">
+                <h3>Bizcocho de Yogur</h3>
+                <img src="imagen/postre8.jpg" alt="Bizcocho de Yogur">
+                <p>Bizcocho suave y esponjoso, hecho con yogur para un toque extra de humedad.</p>
+                <button onclick="mostrarTutorial('bizcocho_yogur')">Ver Tutorial</button>
+                <div id="bizcocho_yogur" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>1 yogur natural (125g)</li>
+                        <li>200g de harina</li>
+                        <li>150g de azúcar</li>
+                        <li>3 huevos</li>
+                        <li>1 sobre de levadura</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C.</li>
+                        <li>En un bol, bate los huevos con el azúcar hasta obtener una mezcla cremosa.</li>
+                        <li>Añade el yogur y mezcla bien.</li>
+                        <li>Incorpora la harina tamizada junto con la levadura y mezcla hasta que no queden grumos.</li>
+                        <li>Vierte la masa en un molde previamente engrasado.</li>
+                        <li>Hornea durante 35 minutos o hasta que al insertar un palillo en el centro, salga limpio.</li>
+                        <li>Deja enfriar antes de desmoldar y servir.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="bizcocho_yogur">Quiero comprarlo</button>
+            </article>
+
+        </section>
+
+        <section id="pasteles" class="categoria">
+            <h2>Pasteles</h2>
+            <div class="comentarios">
+                <h3>¿Te gustaría sugerir un nuevo pastel?</h3>
+                <form id="form-comentarios-pasteles" onsubmit="submitComentario(event, 'pasteles')">
+                    <label for="nombrePastel">Nombre del pastel:</label>
+                    <input type="text" id="nombrePastel" required>
+                    
+                    <label for="comentarioPastel">Comentario o sugerencia:</label>
+                    <textarea id="comentarioPastel" rows="4" required></textarea>
+                    
+                    <button type="submit">Enviar Sugerencia</button>
+                </form>
+                <div id="lista-comentarios-pasteles">
+                    <!-- Aquí se mostrarán los comentarios de los usuarios -->
+                </div>
+            </div>
+        
+            <!-- Pastel de Vainilla -->
+            <article class="tutorial">
+                <h3>Pastel de Vainilla</h3>
+                <img src="imagen/pastel1.jpg" alt="Pastel de Vainilla">
+                <p>Un pastel suave y esponjoso con sabor a vainilla.</p>
+                <button onclick="mostrarTutorial('vainilla')">Ver Tutorial</button>
+                <div id="vainilla" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de harina</li>
+                        <li>150g de azúcar</li>
+                        <li>3 huevos</li>
+                        <li>Esencia de vainilla</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C.</li>
+                        <li>En un bol, bate los huevos con el azúcar hasta obtener una mezcla esponjosa.</li>
+                        <li>Añade la esencia de vainilla y mezcla bien.</li>
+                        <li>Incorpora la harina tamizada y mezcla suavemente hasta que no queden grumos.</li>
+                        <li>Vierte la mezcla en un molde engrasado.</li>
+                        <li>Hornea por 35 minutos o hasta que un palillo salga limpio al insertarlo en el centro.</li>
+                        <li>Deja enfriar antes de desmoldar y servir.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="pastel_vainilla">Quiero comprarlo</button>
+            </article>
+        
+            <!-- Pastel de Chocolate -->
+            <article class="tutorial">
+                <h3>Pastel de Chocolate</h3>
+                <img src="imagen/pastel2.jpeg" alt="Pastel de Chocolate">
+                <p>Un pastel de chocolate clásico, perfecto para cualquier ocasión.</p>
+                <button onclick="mostrarTutorial('chocolate')">Ver Tutorial</button>
+                <div id="chocolate" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de chocolate</li>
+                        <li>200g de azúcar</li>
+                        <li>4 huevos</li>
+                        <li>200g de harina</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C.</li>
+                        <li>Derrite el chocolate y deja enfriar ligeramente.</li>
+                        <li>Bate los huevos con el azúcar hasta obtener una mezcla cremosa.</li>
+                        <li>Incorpora el chocolate derretido y mezcla bien.</li>
+                        <li>Añade la harina tamizada y mezcla hasta obtener una masa homogénea.</li>
+                        <li>Vierte la mezcla en un molde engrasado y hornea por 35 minutos.</li>
+                        <li>Deja enfriar antes de desmoldar y servir.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="pastel_chocolate">Quiero comprarlo</button>
+            </article>
+        
+            <!-- Pastel de Tres Leches -->
+            <article class="tutorial">
+                <h3>Pastel de Tres Leches</h3>
+                <img src="imagen/pastel3.jpg" alt="Pastel de Tres Leches">
+                <p>Un pastel húmedo con una mezcla de tres leches que lo hace irresistible.</p>
+                <button onclick="mostrarTutorial('tres_leches')">Ver Tutorial</button>
+                <div id="tres_leches" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de harina</li>
+                        <li>4 huevos</li>
+                        <li>200g de azúcar</li>
+                        <li>1 lata de leche condensada</li>
+                        <li>1 lata de leche evaporada</li>
+                        <li>200ml de crema de leche</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C y engrasa un molde.</li>
+                        <li>Bate los huevos con el azúcar hasta que estén espumosos.</li>
+                        <li>Incorpora la harina tamizada y mezcla suavemente.</li>
+                        <li>Vierte la masa en el molde y hornea por 30 minutos.</li>
+                        <li>En un bol, mezcla la leche condensada, evaporada y la crema.</li>
+                        <li>Cuando el pastel esté listo, déjalo enfriar y haz pequeños agujeros en la superficie.</li>
+                        <li>Vierte la mezcla de leches sobre el pastel y refrigera por al menos 2 horas antes de servir.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="tres_leches">Quiero comprarlo</button>
+            </article>
+        
+            <!-- Pastel de Zanahoria -->
+            <article class="tutorial">
+                <h3>Pastel de Zanahoria</h3>
+                <img src="imagen/pastel4.jpg" alt="Pastel de Zanahoria">
+                <p>Un pastel suave y húmedo con el sabor único de la zanahoria y un toque de canela.</p>
+                <button onclick="mostrarTutorial('zanahoria')">Ver Tutorial</button>
+                <div id="zanahoria" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de zanahoria rallada</li>
+                        <li>200g de harina</li>
+                        <li>150g de azúcar</li>
+                        <li>3 huevos</li>
+                        <li>1 cucharadita de canela en polvo</li>
+                        <li>100ml de aceite vegetal</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C.</li>
+                        <li>Bate los huevos con el azúcar hasta obtener una mezcla cremosa.</li>
+                        <li>Añade el aceite y la zanahoria rallada, y mezcla bien.</li>
+                        <li>Incorpora la harina y la canela, y mezcla hasta que esté homogéneo.</li>
+                        <li>Vierte en un molde engrasado y hornea por 40 minutos.</li>
+                        <li>Deja enfriar antes de desmoldar y servir.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="pastel_zanahoria">Quiero comprarlo</button>
+            </article>
+        
+            <!-- Pastel de Naranja -->
+            <article class="tutorial">
+                <h3>Pastel de Naranja</h3>
+                <img src="imagen/pastel5.jpg" alt="Pastel de Naranja">
+                <p>Un pastel refrescante con el sabor cítrico de la naranja.</p>
+                <button onclick="mostrarTutorial('naranja')">Ver Tutorial</button>
+                <div id="naranja" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de harina</li>
+                        <li>150g de azúcar</li>
+                        <li>3 huevos</li>
+                        <li>100ml de jugo de naranja</li>
+                        <li>Ralladura de una naranja</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C.</li>
+                        <li>Bate los huevos con el azúcar hasta que se disuelvan bien.</li>
+                        <li>Añade el jugo y la ralladura de naranja y mezcla.</li>
+                        <li>Incorpora la harina y mezcla hasta obtener una masa uniforme.</li>
+                        <li>Vierte en un molde engrasado y hornea por 35 minutos.</li>
+                        <li>Deja enfriar antes de desmoldar y servir.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="pastel_naranja">Quiero comprarlo</button>
+            </article>
+        
+            <!-- Pastel de Manzana -->
+            <article class="tutorial">
+                <h3>Pastel de Manzana</h3>
+                <img src="imagen/pastel6.jpg" alt="Pastel de Manzana">
+                <p>Pastel suave y esponjoso con trozos de manzana que le dan un sabor único.</p>
+                <button onclick="mostrarTutorial('manzana')">Ver Tutorial</button>
+                <div id="manzana" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de harina</li>
+                        <li>150g de azúcar</li>
+                        <li>3 huevos</li>
+                        <li>2 manzanas</li>
+                        <li>1 cucharadita de canela en polvo</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C.</li>
+                        <li>Bate los huevos con el azúcar hasta obtener una mezcla cremosa.</li>
+                        <li>Añade la canela y mezcla bien.</li>
+                        <li>Incorpora la harina y mezcla hasta que no queden grumos.</li>
+                        <li>Agrega las manzanas cortadas en cubitos y mezcla.</li>
+                        <li>Vierte en un molde engrasado y hornea por 40 minutos.</li>
+                        <li>Deja enfriar antes de desmoldar y servir.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="pastel_manzana">Quiero comprarlo</button>
+            </article>
+        
+            <!-- Pastel de Fresas con Crema -->
+            <article class="tutorial">
+                <h3>Pastel de Fresas con Crema</h3>
+                <img src="imagen/pastel7.jpg" alt="Pastel de Fresas con Crema">
+                <p>Pastel delicioso con capas de fresas frescas y crema batida.</p>
+                <button onclick="mostrarTutorial('fresas_crema')">Ver Tutorial</button>
+                <div id="fresas_crema" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de harina</li>
+                        <li>150g de azúcar</li>
+                        <li>3 huevos</li>
+                        <li>200ml de crema de leche</li>
+                        <li>200g de fresas frescas</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C.</li>
+                        <li>Bate los huevos con el azúcar hasta obtener una mezcla cremosa.</li>
+                        <li>Incorpora la harina y mezcla hasta obtener una masa uniforme.</li>
+                        <li>Vierte en un molde engrasado y hornea por 35 minutos.</li>
+                        <li>Deja enfriar el pastel, córtalo en dos capas y cubre con crema batida y fresas.</li>
+                        <li>Coloca la otra capa de pastel encima y cubre con más crema y fresas.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="fresas_crema">Quiero comprarlo</button>
+            </article>
+        
+            <!-- Pastel de Plátano -->
+            <article class="tutorial">
+                <h3>Pastel de Plátano</h3>
+                <img src="imagen/pastel8.jpg" alt="Pastel de Plátano">
+                <p>Un pastel húmedo y dulce con el sabor natural del plátano.</p>
+                <button onclick="mostrarTutorial('platano')">Ver Tutorial</button>
+                <div id="platano" class="detalle" style="display:none;">
+                    <p><strong>Ingredientes:</strong></p>
+                    <ul>
+                        <li>200g de harina</li>
+                        <li>150g de azúcar</li>
+                        <li>3 huevos</li>
+                        <li>3 plátanos maduros</li>
+                        <li>100ml de aceite vegetal</li>
+                    </ul>
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Precalienta el horno a 180°C.</li>
+                        <li>Tritura los plátanos y mézclalos con el azúcar y los huevos.</li>
+                        <li>Añade el aceite y mezcla bien.</li>
+                        <li>Incorpora la harina tamizada y mezcla hasta obtener una masa uniforme.</li>
+                        <li>Vierte la masa en un molde engrasado y hornea por 40 minutos.</li>
+                        <li>Deja enfriar antes de desmoldar y servir.</li>
+                    </ol>
+                </div>
+                <button class="comprar-btn" data-product="pastel_platano">Quiero comprarlo</button>
+            </article>
+        </section>        
+    </div>
+    <!-- Vista de detalles del producto en pantalla completa -->
+<div id="vista-detalle" style="display: none;">
+    <button id="cerrar-detalle" onclick="cerrarVistaDetalle()">X</button>
+    <h2 id="nombre-detalle"></h2>
+    <img id="imagen-detalle" src="" alt="Imagen del producto">
+    <p id="descripcion-detalle"></p>
+    <p><strong>Precio:</strong> <span id="precio-detalle"></span></p>
+    
+    <!-- Botón de Confirmar Compra -->
+    <button id="boton-confirmar-compra" onclick="confirmarCompra()">Confirmar Compra</button>
+
+    <!-- Contenedor para el mensaje de compra confirmada y el pago con Yape -->
+    <div id="mensaje-compra" style="display: none; text-align: center; margin-top: 20px;">
+        <p>¡Compra confirmada! Gracias por su compra.</p>
+        <img src="imagen/yape.jpeg" alt="Paga con Yape" style="max-width: 150px;">
+        <p>Escanea el código QR de Yape para realizar el pago.</p>
+    </div>
+</div>
+
+    <footer id="contacto">
+        <h3>Contacto</h3>
+        <p>Correo: contacto@reposteriadeliciosa.com</p>
+        <p>Teléfono: +51 973865415</p>
+        <p>Dirección: Jr. Francisco Bolognesi con Caracoto N°720</p>
+    </footer>
+    
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
